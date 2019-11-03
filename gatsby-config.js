@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Crolla Creations`,
-    description: `Portfolio website for Cristiano Crolla`,
+    description: `Edinburgh based freelance web designer and developer`,
     author: `Cistiano Crolla`,
+    siteUrl: `https://www.crollacreations.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,6 +16,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.crollacreations.com',
+        sitemap: 'https://www.crollacreations.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -1,6 +1,5 @@
 import React, {useEffect} from "react"
 
-import { Link } from 'gatsby'
 import Layout from "../components/layout"
 import AboutSect from '../components/indexPage/aboutSect'
 import PortfolioSection from '../components/portfolio'
