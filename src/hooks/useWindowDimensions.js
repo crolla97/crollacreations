@@ -8,8 +8,8 @@ if (typeof window !== `undefined`) {
   defaultWidth = window.innerWidth
 }
 export const useWindowDimensions = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(defaultWidth);
+  const [height, setHeight] = useState(defaultHeight);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,7 +18,7 @@ export const useWindowDimensions = () => {
     };
     window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize, true);
+      window.removeEventListener("resize", handleResize);
     };
   }, [width, height])
   return {
