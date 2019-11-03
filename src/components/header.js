@@ -1,35 +1,32 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, {useState} from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import '../styles/components/header.scss'
+import { Link } from "gatsby";
+
+const Header = ({ siteTitle, parentCallback }) => {
+  let [open, setOpen] = useState(false);
+  const topBar = open ? 'bar bar-top bar-top-anim' : 'bar bar-top';
+  const midBar = open ? 'bar bar-mid bar-mid-anim' : 'bar bar-mid';
+  const botBar = open ? 'bar bar-bot bar-bot-anim' : 'bar bar-bot';
+
+  return (
+    <header>
+      <Link to='/' className="logo">
+        <span>CC</span>
+      </Link>
+      <div className="hamburger-menu" onClick={() => {
+        let newValue = !open
+        setOpen(!open);
+        parentCallback(newValue);
+      }}>
+        <div className={topBar}></div>
+        <div className={midBar}></div>
+        <div className={botBar}></div>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

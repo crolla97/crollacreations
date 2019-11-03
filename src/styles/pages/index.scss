@@ -1,0 +1,285 @@
+@import '../base/settings.scss';
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: 1/span 12;
+  width: 100%;
+}
+
+.full-height {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.landing {
+  grid-column: 2/span 10;
+  grid-row: 1/span 1 ;
+  margin-top: 25vh;
+}
+
+h1 {
+  position: relative;
+  overflow: hidden;
+  font-size: 50px;
+  height: $xxxl-size;
+  margin: 0;
+  color: #000;
+  font-weight: 900;
+}
+
+.dbl-height {
+  height: 120px;
+}
+
+.hide-text {
+  position: absolute;
+  z-index: 200;
+  visibility: hidden;
+}
+
+.hlt-text {
+  color: $orange;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.role-headers {
+  margin: 60px 0 60px;
+}
+
+.role {
+  position: relative;
+  margin-right: 3.33%;
+  width: 30%;
+  display: inline-flex;
+}
+
+.role-text {
+  font-size: $sm-size;
+  line-height: $m-size;
+  opacity: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #000;
+}
+
+.role-bg {
+  display: block;
+  width: calc(100% - 16px);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transform-origin: right;
+  opacity: 0;
+  background-color: #EE9700;
+}  
+
+.social-links {
+  display: flex;
+  position: relative;
+  width: $ml-size;
+  height: $ml-size;
+
+  a {
+    margin-right: $ml-size;
+    
+    .social-icon {
+      width: $ml-size;
+      height: $ml-size;
+      visibility: hidden;
+    }
+  }
+}
+
+/*************
+* INTRO SECT *
+*************/
+
+.intro-section {
+  grid-column: 2/span 10;
+  grid-row: 1/span 1;
+  margin: 50px 0 200px;
+  text-align: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-size: $sm-size;
+    line-height: $ml-size;
+    width: 60%;
+    color: $grey;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+    margin: 20px 0 100px;
+
+    span {
+      font-size: $ms-size;
+    }
+  }
+}
+
+.blog-intro {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: $l-size;
+    font-weight: 400;
+    display: inline;
+  }
+
+  .blog-posts {
+    display: flex;
+    flex-direction: column;
+
+    .post-header {
+      color: $orange;
+      font-size: $ml-size;
+      line-height: $xxl-size;
+      margin-top: $sm-size;
+    }
+    .post {
+      font-size: $m-size;
+      line-height: $ml-size;
+      text-decoration: none;
+      color: $grey;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+
+.project-intro {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 83.33%;
+  visibility: hidden;
+  
+  h2 {
+    font-size: 65px;
+    height: 65px;
+    margin: 0;
+  }
+}
+
+/****************
+* MEDIA QUERIES *
+****************/
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media only screen and (min-width: 1024px) {
+
+  .landing {
+    margin-top: 20vh;
+  }
+
+  h1 {
+    font-size: 70px;
+    height: 90px;
+  }
+
+  .dbl-height {
+    height: 90px;
+  }
+
+  .role-headers {
+    margin: 60px 0 60px;
+  }
+  
+  .role {
+    position: relative;
+    margin-right: 40px;
+    width: unset;
+    display: inline-block;
+  }
+  
+  .role-text {
+    font-size: $sm-size;
+    line-height: $l-size;
+    opacity: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .role-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transform-origin: right;
+    opacity: 0;
+    background-color: #EE9700;
+  }
+  
+  .project-intro {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 83.33%;
+    visibility: hidden;
+    // height: 98vh;
+    
+    h2 {
+      font-size: 100px;
+      height: 100px;
+    }
+  }
+
+  .full-height {
+    min-height: 800px;
+  }
+
+  .blog-intro {
+    display: flex;
+    flex-direction: column;
+  
+    h3 {
+      font-size: $xl-size;
+      font-weight: 400;
+      display: inline;
+    }
+  
+    .blog-posts {
+  
+      .post-header {
+        color: $orange;
+        font-size: $l-size;
+        line-height: $xxl-size;
+        margin-top: 20px;
+      }
+      .post {
+        font-size: $ml-size;
+        line-height: $l-size;
+        text-decoration: none;
+        color: $grey;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}

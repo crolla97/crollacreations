@@ -1,0 +1,68 @@
+@import '../base/settings';
+
+.blogContainer {
+  padding: 200px 20px;
+
+  h2 {
+    font-size: $l-size;
+    margin-bottom: $ml-size;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.blog-list--item {
+  margin: $m-size 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.blogLink {
+  text-decoration: none;
+  color: #000;
+
+  h3 {
+    font-size: $ms-size;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+
+    span {
+      font-size: $sm-size;
+    }
+
+    .split {
+      border-right: 1px solid $orange;
+      margin: 0 $xs-size;
+    }
+  }
+}
+
+/****************
+* MEDIA QUERIES *
+****************/
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1024px to higher resolution desktops
+*/
+
+@media only screen and (min-width: 1024px) {
+  .blogContainer {
+    width: 60%;
+    margin: 0 auto;
+    min-height: 85vh;
+    padding: 150px 0 0 0;
+
+    h2 {
+      font-size: $xxl-size;
+      margin-bottom: $ml-size;
+    }
+  }
+  .blog-list--item {
+    width: 50%;
+  }
+}

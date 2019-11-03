@@ -1,0 +1,16 @@
+@import '../base/settings.scss';
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 1em;
+  margin: 0.5em 0;
+  padding: 2em;
+  overflow: auto;
+  font-size: $m-size;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+}

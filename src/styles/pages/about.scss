@@ -1,0 +1,122 @@
+@import '../base/settings.scss';
+
+.aboutContainer {
+  width: 90%;
+  padding-top: 150px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+.aboutIntro {
+
+  h2 {
+    font-size: 4.5rem;
+    height: 45px;
+    font-family: Playfair Display;
+  }
+}
+
+.orangeLine {
+  height: 6px;
+  background-color: $orange;
+  margin: 50px 0;
+}
+
+.orangeLine1 {
+  width: 100%;
+}
+
+.orangeLine2 {
+  width: 100%;
+}
+
+.orangeLine3 {
+  width: 100%;
+}
+
+.aboutText {
+
+  p {
+    font-size: $m-size;
+  }
+}
+
+.skills {
+  display: flex;
+
+  ul {
+    margin: 0 auto;    
+
+    span {
+      font-size: $ms-size;
+      font-weight: 600;
+    }
+    li {
+      font-size: $m-size;
+      padding: 5px 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .aboutContainer {
+    width: 60%;
+    margin: 0 20%;
+  }
+
+  .aboutIntro {
+
+    h2 {
+      font-size: 8rem;
+      height: 90px;
+    }
+  }
+
+  .orangeLine1 {
+    width: 33.33%;
+  }
+  
+  .orangeLine2 {
+    width: 66.66%;
+  }
+
+  .orangeLine3 {
+    width: 100%;
+  }
+
+  .aboutText {
+    width: 66.66%;
+
+    p {
+      font-size: $ms-size;
+      line-height: $ml-size;
+    }
+  }
+
+  .skills {
+  
+    ul {
+      margin: 0 0 0 2px; 
+  
+      span {
+        font-size: $ml-size;
+        font-weight: 600;
+      }
+      li {
+        font-size: $ms-size;
+        padding: 5px 0;
+      }
+    }
+
+    .dev {
+      width: 33.33%;
+    }
+    
+    .design {
+      width: 33.33%;      
+    }
+  }
+}

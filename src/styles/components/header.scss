@@ -1,0 +1,58 @@
+@import '../base/settings.scss';
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 300;
+
+  .bar {
+    position: relative;
+    background: #fff;
+    width: 25px;
+    height: 2px;
+    transition: all 0.2s ease,
+  }
+  .bar-mid {
+    margin-top: 5px;
+  }
+  .bar-bot {
+    margin-top: 5px;
+  }
+
+  
+}
+.hamburger-menu {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 20px;
+  right: 0;
+  height: 40px;
+  width: 60px;
+  z-index: 300;
+  background: $orange;
+  cursor: pointer;
+}
+.logo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  left: 0;
+  height: 40px;
+  width: 60px;
+  z-index: 300px;
+  cursor: pointer;
+  background: $orange;
+  text-decoration: none;
+
+  span {
+    font-size: $ms-size;
+    color: #fff;
+    font-weight: 600;
+  }
+}
+

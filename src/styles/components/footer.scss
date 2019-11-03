@@ -1,0 +1,58 @@
+@import '../base/settings.scss';
+
+footer {
+  background-image: linear-gradient(to right, $grey 33%, rgba(255,255,255,0) 0%);
+  background-position: top;
+  background-size: 15px 2px;
+  background-repeat: repeat-x;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+
+  span {
+    grid-column: 2/span 10;
+    grid-row: 1/span 1;
+    font-size: $ms-size;
+    text-decoration: underline;
+    text-decoration-color: $orange;
+  }
+  .footer-social-links {
+    grid-column: 2/span 10;
+    grid-row: 2/span 1;
+    height: $ml-size;
+    
+    img {
+      padding-right: 20px;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  footer {
+    background-image: linear-gradient(to right, $grey 33%, rgba(255,255,255,0) 0%);
+    background-position: top;
+    background-size: 15px 2px;
+    background-repeat: repeat-x;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    gap: 0;
+  
+    span {
+      grid-column: 5/span 5;
+      grid-row: 1/span 1;
+      font-size: $ms-size;
+    }
+    .footer-social-links {
+      grid-column: 14/span 5;
+      grid-row: 1/span 1;
+      height: $ml-size;
+      
+      img {
+        padding-right: 20px;
+      }
+    }
+  }
+}
