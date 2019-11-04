@@ -23,10 +23,8 @@ const PortfolioSection = () => {
     let box = elements.querySelectorAll('.box');
 
     const mobTL = new TimelineMax()
-    const mobProjectTitleTL = new TimelineMax()
     const mobController = new ScrollMagic.Controller()
     const deskTL = new TimelineMax()
-    const deskProjectTitleTL = new TimelineMax()
     const deskController = new ScrollMagic.Controller()
 
     if (dimensions.windowWidth < 1024) {
@@ -38,7 +36,6 @@ const PortfolioSection = () => {
       deskProject()
       elements.classList.add('grid-20');  
       mobTL.kill();
-      mobProjectTitleTL.kill()
       mobController.destroy(true)
     }
     
@@ -54,16 +51,6 @@ const PortfolioSection = () => {
         triggerHook: "onEnter",
       })
       .setTween(mobTL)
-      .reverse(false)
-      .addTo(mobController);
-
-      mobProjectTitleTL
-      .to('.project-intro', 1.5, {autoAlpha: 1, ease:Power4.easeOut})
-
-      new ScrollMagic.Scene({
-        triggerElement: '.project-intro',
-      })
-      .setTween(mobProjectTitleTL)
       .reverse(false)
       .addTo(mobController);
     }
@@ -82,16 +69,6 @@ const PortfolioSection = () => {
         triggerElement: elements,
       })
       .setTween(deskTL)
-      .reverse(false)
-      .addTo(deskController);
-
-      deskProjectTitleTL
-      .to('.project-intro', 1.2, {autoAlpha: 1, ease:Power4.easeOut})
-
-      new ScrollMagic.Scene({
-        triggerElement: '.project-intro',
-      })
-      .setTween(deskProjectTitleTL)
       .reverse(false)
       .addTo(deskController);
     }

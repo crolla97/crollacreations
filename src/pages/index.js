@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import '../styles/pages/index.scss'
 import TimelineMax from 'TimelineMax';
 import { Power4 } from "gsap";
+import ScrollMagic from 'ScrollMagic';
 import 'animation.gsap';
 import 'debug.addIndicators';
 import { useWindowSize } from '../hooks/useWindowDimensions'
@@ -19,11 +20,19 @@ const IndexPage = () => {
     // New GSAP Timelines
     const mobAnim = new TimelineMax();
     const deskAnim = new TimelineMax();
+    const mobProjectTitleTL = new TimelineMax()
+    const mobController = new ScrollMagic.Controller()
+    const deskProjectTitleTL = new TimelineMax()
+    const deskController = new ScrollMagic.Controller()
     
     if (dimensions.windowWidth < 1024) {
       mobileTL()
+      deskProjectTitleTL.kill()
+      deskController.destroy(true)
     } else if (dimensions.windowWidth >= 1024) {
       desktopTL()
+      mobProjectTitleTL.kill()
+      mobController.destroy(true)
     }
 
     function desktopTL() {
@@ -35,6 +44,16 @@ const IndexPage = () => {
       .to('.role-bg', 0.3, {scaleX:0})
       .from('.social-icon', 0.3, {autoAlpha:0, y:"100%"}, "-=0.3")
       .to('.side-links', 0.8, {x: 0, ease:Power4.easeOut});
+      
+      deskProjectTitleTL
+      .to('.project-intro', 1.2, {autoAlpha: 1, ease:Power4.easeOut})
+
+      new ScrollMagic.Scene({
+        triggerElement: '.project-intro',
+      })
+      .setTween(deskProjectTitleTL)
+      .reverse(false)
+      .addTo(deskController);
     }
     function mobileTL() {
       deskAnim.clear()
@@ -44,6 +63,16 @@ const IndexPage = () => {
       .to('.role-text', 0.1, {opacity:1}, "-=0.8")
       .to('.role-bg', 0.3, {scaleX:0}, "-=0.6")
       .from('.social-icon', 0.3, {autoAlpha:0, y:"100%"}, '-=0.4')
+
+      mobProjectTitleTL
+      .to('.project-intro', 1.5, {autoAlpha: 1, ease:Power4.easeOut})
+
+      new ScrollMagic.Scene({
+        triggerElement: '.project-intro',
+      })
+      .setTween(mobProjectTitleTL)
+      .reverse(false)
+      .addTo(mobController);
     }
   }, [])
 

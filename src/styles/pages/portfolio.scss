@@ -1,17 +1,18 @@
-.project-page-intro {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 83.33%;
-  height: 98vh;
-  
-  h2 {
-    font-size: 65px;
-    height: 65px;
-    margin: 0;
+  .project-page-intro {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 83.33%;
+    height: 98vh;
+    
+    h2 {
+      font-size: 65px;
+      height: 65px;
+      margin: 0;
+    }
   }
-}
+
 
 /****************
 * MEDIA QUERIES *

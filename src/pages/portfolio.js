@@ -38,7 +38,8 @@ const PortfolioPage = () => {
   return (
   <Layout>
     <SEO title="Portfolio" />
-    <div className="project-page-intro">
+    <div className="project-wrapper">
+      <div className="project-page-intro">
         <h2>
           <span className="hide-text">Here's</span>
         </h2>
@@ -53,6 +54,7 @@ const PortfolioPage = () => {
         </h2>
         <img className="arrow-down" src={require('../images/right-chevron.png')} alt="down arrow"/>
       </div>
+    </div>
     <Portfolio />
   </Layout>)
   }
