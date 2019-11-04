@@ -35,7 +35,7 @@ footer {
     background-position: top;
     background-size: 15px 2px;
     background-repeat: repeat-x;
-    padding: 20px 0;
+    padding: 25px 0;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     gap: 0;
@@ -43,7 +43,7 @@ footer {
     span {
       grid-column: 5/span 5;
       grid-row: 1/span 1;
-      font-size: $ms-size;
+      font-size: $ml-size;
     }
     .footer-social-links {
       grid-column: 14/span 5;

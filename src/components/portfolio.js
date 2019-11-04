@@ -28,15 +28,15 @@ const PortfolioSection = () => {
     const deskController = new ScrollMagic.Controller()
 
     if (dimensions.windowWidth < 1024) {
-      mobProject()
       elements.classList.remove('grid-20');
       deskTL.kill()
       deskController.destroy(true)
+      mobProject()
     } else if (dimensions.windowWidth >= 1024) {
-      deskProject()
       elements.classList.add('grid-20');  
       mobTL.kill();
       mobController.destroy(true)
+      deskProject()
     }
     
     function mobProject() {
@@ -78,14 +78,14 @@ const PortfolioSection = () => {
   return (
     <div>
       <section>
-        <div className="project project-left">
+        <div className="project project1">
           <div className="box">
             <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
             <span className="small-title">Design // Website // Photography</span>
-            <h4>This is my first project</h4>
+            <h4>This is my first<br/>project</h4>
             <Link className="project-link" to='/'>Code</Link>
             <Link className="project-link" to='/'>Live</Link>
           </div>
@@ -93,7 +93,7 @@ const PortfolioSection = () => {
       </section>
       
       <section>
-        <div className="project project-right">
+        <div className="project project2">
           <div className="box">
             <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
@@ -108,14 +108,14 @@ const PortfolioSection = () => {
       </section>
 
       <section>
-        <div className="project project-left">
+        <div className="project project3">
           <div className="box">
             <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
             <span className="small-title">Design // Website</span>
-            <h4>This is my third project</h4>
+            <h4>This is my third<br/>project</h4>
             <Link className="project-link" to='/'>Code</Link>
             <Link className="project-link" to='/'>Live</Link>
           </div>
@@ -123,7 +123,7 @@ const PortfolioSection = () => {
       </section>
 
       <section>
-        <div className="project project-right">
+        <div className="project project4">
           <div className="box">
             <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
