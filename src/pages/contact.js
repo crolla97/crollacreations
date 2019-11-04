@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 import '../styles/pages/contact.scss'
 import TimelineMax from 'TimelineMax';
 import { Power4 } from "gsap";
-import 'animation.gsap';
-import 'debug.addIndicators';
 
 const ContactPage = () => {
 

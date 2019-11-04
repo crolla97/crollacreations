@@ -3,14 +3,14 @@ import React, {useEffect} from "react"
 import { Link } from 'gatsby'
 import TimelineMax from 'TimelineMax';
 import { Power4 } from "gsap";
+import ScrollMagic from 'ScrollMagic';
 import 'animation.gsap';
 import 'debug.addIndicators';
-import ScrollMagic from 'ScrollMagic';
-import { useWindowDimensions } from '../hooks/useWindowDimensions'
+import { useWindowSize } from '../hooks/useWindowDimensions'
 import '../styles/components/portfolio.scss'
 
 const PortfolioSection = () => {
-  const dimensions = useWindowDimensions()
+  const dimensions = useWindowSize()
   
   useEffect(() => {
     let projects = document.querySelectorAll('.project');
@@ -29,12 +29,12 @@ const PortfolioSection = () => {
     const deskProjectTitleTL = new TimelineMax()
     const deskController = new ScrollMagic.Controller()
 
-    if (dimensions.width < 1024) {
+    if (dimensions.windowWidth < 1024) {
       mobProject()
       elements.classList.remove('grid-20');
       deskTL.kill()
       deskController.destroy(true)
-    } else if (dimensions.width >= 1024) {
+    } else if (dimensions.windowWidth >= 1024) {
       deskProject()
       elements.classList.add('grid-20');  
       mobTL.kill();

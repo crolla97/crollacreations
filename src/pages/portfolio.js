@@ -6,22 +6,20 @@ import SEO from "../components/seo"
 import '../styles/pages/portfolio.scss'
 import TimelineMax from 'TimelineMax';
 import { Power4 } from "gsap";
-import 'animation.gsap';
-import 'debug.addIndicators';
-import { useWindowDimensions } from '../hooks/useWindowDimensions'
+import { useWindowSize } from '../hooks/useWindowDimensions'
 
 const PortfolioPage = () => {
 
-  const dimensions = useWindowDimensions()
+  const dimensions = useWindowSize()
 
   useEffect(() => {
     // New GSAP Timelines
     const mobAnim = new TimelineMax();
     const deskAnim = new TimelineMax();
     
-    if (dimensions.width < 1024) {
+    if (dimensions.windowWidth < 1024) {
       mobileTL()
-    } else if (dimensions.width >= 1024) {
+    } else if (dimensions.windowWidth >= 1024) {
       desktopTL()
     }
 

@@ -1,17 +1,13 @@
 import React, {useEffect} from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-
 import TimelineMax from 'TimelineMax';
+import ScrollMagic from 'ScrollMagic';
 import 'animation.gsap';
 import 'debug.addIndicators';
-import ScrollMagic from 'ScrollMagic';
 
 
 const AboutSect = () => {
-  const introBlogMobile = new TimelineMax()
-  const controller = new ScrollMagic.Controller()
-
   const data = useStaticQuery(graphql`
   query {
     markdownRemark(frontmatter:{ featured:{ eq: true } }) {
@@ -26,6 +22,8 @@ const AboutSect = () => {
   `)
   
   useEffect(() => {
+    const introBlogMobile = new TimelineMax()
+    const controller = new ScrollMagic.Controller()  
     introBlogMobile
     .staggerFrom('.blog-posts', 0.8, {opacity:0, y:"100%"}, 0.2)
     .from('h3', 0.8, {opacity:0}, '-=1.2')

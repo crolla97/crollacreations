@@ -1,21 +1,63 @@
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: ['node_modules'],
-      alias: {
-        'TweenLite': 'gsap/src/minified/TweenLite.min.js',
-        'TweenMax': 'gsap/src/minified/TweenMax.min.js',
-        'TimelineLite': 'gsap/src/minified/TimelineLite.min.js',
-        'TimelineMax': 'gsap/src/minified/TimelineMax.min.js',
-        'ScrollMagic': 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
-        'animation.gsap': 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
-        'debug.addIndicators': 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'
-      }
-    }
-  });
-};
-
 const path  = require('path')
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules:
+        stage === 'build-html'
+          ? [
+              {
+                test: /ScrollMagic/,
+                use: loaders.null(),
+              },
+              {
+                test: /scrollmagic/,
+                use: loaders.null(),
+              },
+            ]
+          : [],
+    },
+    resolve: {
+      alias: {
+        TweenLite: path.resolve(
+          'node_modules',
+          'gsap/src/uncompressed/TweenLite.js'
+        ),
+        TweenMax: path.resolve(
+          'node_modules',
+          'gsap/src/uncompressed/TweenMax.js'
+        ),
+        TimelineLite: path.resolve(
+          'node_modules',
+          'gsap/src/uncompressed/TimelineLite.js'
+        ),
+        TimelineMax: path.resolve(
+          'node_modules',
+          'gsap/src/uncompressed/TimelineMax.js'
+        ),
+        ScrollMagic: path.resolve(
+          'node_modules',
+          'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'
+        ),
+        'animation.gsap': path.resolve(
+          'node_modules',
+          'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
+        ),
+        'debug.addIndicators': path.resolve(
+          'node_modules',
+          'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
+        ),
+      },
+    },
+  })
+}
+
 
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
