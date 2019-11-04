@@ -72,16 +72,11 @@ h4 {
 @media only screen and (min-width: 1024px) {
   .small-title {
     font-size: $s-size;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
   }
   
   h4 {
     font-weight: 900;
     font-size: $xl-size;
-    color: #000;
-    letter-spacing: 0.0001em;
   }
   
   section {

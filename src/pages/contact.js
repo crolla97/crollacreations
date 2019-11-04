@@ -31,13 +31,13 @@ const ContactPage = () => {
             <span className="hide-text">have a project I</span>
           </h2>
           <h2>
-            <span className="hide-text">can help you with,</span>
+            <span className="hide-text">could help you with</span>
           </h2>
           <h2>
-            <span className="hide-text">I would love to hear</span>
+            <span className="hide-text">I would love to</span>
           </h2>
           <h2>
-            <span className="hide-text">to hear from you</span>
+            <span className="hide-text">hear from you</span>
           </h2>
         </div>
         <div className="contact">

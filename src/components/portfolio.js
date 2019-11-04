@@ -103,7 +103,7 @@ const PortfolioSection = () => {
       <section>
         <div className="project project-left">
           <div className="box">
-            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="melt"/>
+            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
@@ -118,7 +118,7 @@ const PortfolioSection = () => {
       <section>
         <div className="project project-right">
           <div className="box">
-            <img className="project-image" src={require('../images/coffee-portrait.png')} alt="melt"/>
+            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
@@ -133,7 +133,7 @@ const PortfolioSection = () => {
       <section>
         <div className="project project-left">
           <div className="box">
-            <img className="project-image" src={require('../images/edinburgh.jpg')} alt="melt"/>
+            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
@@ -148,7 +148,7 @@ const PortfolioSection = () => {
       <section>
         <div className="project project-right">
           <div className="box">
-            <img className="project-image" src={require('../images/coffee-portrait.png')} alt="melt"/>
+            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
