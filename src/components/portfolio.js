@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 
-import { Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import TimelineMax from 'TimelineMax';
 import { Power4 } from "gsap";
 import ScrollMagic from 'ScrollMagic';
@@ -11,6 +12,17 @@ import '../styles/components/portfolio.scss'
 
 const PortfolioSection = () => {
   const dimensions = useWindowSize()
+  const data = useStaticQuery(graphql`
+    query {
+      massimo: file(relativePath: { eq: "images/massimo-dining&bar.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   
   useEffect(() => {
     let projects = document.querySelectorAll('.project');
@@ -80,14 +92,16 @@ const PortfolioSection = () => {
       <section>
         <div className="project project1">
           <div className="box">
-            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
+            <div className="project-image">
+              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+            </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
             <span className="small-title">Design // Website // Photography</span>
             <h4>This is my first<br/>project</h4>
-            <Link className="project-link" to='/'>Code</Link>
-            <Link className="project-link" to='/'>Live</Link>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
           </div>
         </div>  
       </section>
@@ -95,14 +109,16 @@ const PortfolioSection = () => {
       <section>
         <div className="project project2">
           <div className="box">
-            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
+            <div className="project-image">
+              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+            </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
             <span className="small-title">Design // Website</span>
             <h4>This is my second project</h4>
-            <Link className="project-link" to='/'>Code</Link>
-            <Link className="project-link" to='/'>Live</Link>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
           </div>
         </div>  
       </section>
@@ -110,14 +126,16 @@ const PortfolioSection = () => {
       <section>
         <div className="project project3">
           <div className="box">
-            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
+            <div className="project-image">
+              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+            </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
             <span className="small-title">Design // Website</span>
             <h4>This is my third<br/>project</h4>
-            <Link className="project-link" to='/'>Code</Link>
-            <Link className="project-link" to='/'>Live</Link>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
           </div>
         </div>  
       </section>
@@ -125,14 +143,16 @@ const PortfolioSection = () => {
       <section>
         <div className="project project4">
           <div className="box">
-            <img className="project-image" src={require('../images/massimo-dining&bar.jpg')} alt="restaurant"/>
+            <div className="project-image">
+              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+            </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
             <span className="small-title">Design // Website</span>
             <h4>This is my fourth project</h4>
-            <Link className="project-link" to='/'>Code</Link>
-            <Link className="project-link" to='/'>Live</Link>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
           </div>
         </div>  
       </section>

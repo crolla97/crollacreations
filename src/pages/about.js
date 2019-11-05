@@ -1,5 +1,7 @@
 import React, {useEffect} from "react"
 
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import '../styles/pages/about.scss'
@@ -7,7 +9,7 @@ import TimelineMax from 'TimelineMax';
 import { Power4 } from "gsap";
 import { useWindowSize } from '../hooks/useWindowDimensions'
 
-const AboutPage = () => {
+const AboutPage = (props) => {
   const dimensions = useWindowSize()
 
   useEffect(() => {
@@ -64,12 +66,12 @@ const AboutPage = () => {
             <span>Development</span>          
             <li>Javascript</li>
             <li>React</li>
+            <li>GatsbyJS</li>
             <li>css/scss</li>
             <li>GSAP - animations</li>
-            <li>GatsbyJS</li>
             <li>GraphQL</li>
-            <li>Webpack</li>
-            <li>npm/yarn</li>
+            <li>Firebase</li>
+            <li>Contentful</li>
           </ul>
           <ul className="design">
             <span>Development</span>
@@ -78,10 +80,22 @@ const AboutPage = () => {
           </ul>
         </div>
         <div className="orangeLine orangeLine3"></div>
-        <img src={require('../images/edinburgh.jpg')} alt="portrait"/>
+        <Img fluid={props.data.edinburgh.childImageSharp.fluid} alt="portrait"/>
       </div>
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    edinburgh: file(relativePath: { eq: "images/edinburgh.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default AboutPage

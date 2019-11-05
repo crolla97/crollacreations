@@ -3,12 +3,7 @@
 .aboutContainer {
   width: 90%;
   padding-top: 150px;
-  margin: 0 auto;
-
-  img {
-    width: 100%;
-    margin-bottom: 50px;
-  }
+  margin: 0 auto 50px auto
 }
 .aboutIntro {
 
@@ -64,7 +59,7 @@
 @media only screen and (min-width: 1024px) {
   .aboutContainer {
     width: 60%;
-    margin: 0 20%;
+    margin: 0 20% 100px 20%
   }
 
   .aboutIntro {
