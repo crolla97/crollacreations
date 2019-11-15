@@ -20,6 +20,27 @@ const PortfolioSection = () => {
             ...GatsbyImageSharpFluid
           }
         }
+      },
+      kelvin: file(relativePath: { eq: "images/kelvin-outside.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      portfolio: file(relativePath: { eq: "images/default.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      budget: file(relativePath: { eq: "images/budget.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   `)
@@ -98,10 +119,10 @@ const PortfolioSection = () => {
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
-            <span className="small-title">Design // Website // Photography</span>
-            <h4>This is my first<br/>project</h4>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
+            <span className="small-title">Gatsby // React // GraphQL // SCSS</span>
+            <h4>Massimo Restaurant</h4>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/Massimo-Restaurant'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://massimo.netlify.com/'>Live</a>
           </div>
         </div>  
       </section>
@@ -110,14 +131,14 @@ const PortfolioSection = () => {
         <div className="project project2">
           <div className="box">
             <div className="project-image">
-              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+              <Img fluid={data.budget.childImageSharp.fluid} alt="dining room"/>
             </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
-            <span className="small-title">Design // Website</span>
-            <h4>This is my second project</h4>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
+            <span className="small-title">React // Redux // Firebase // Materialize</span>
+            <h4>Budget App</h4>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/react-budget-app'>Code</a>
             <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
           </div>
         </div>  
@@ -127,15 +148,14 @@ const PortfolioSection = () => {
         <div className="project project3">
           <div className="box">
             <div className="project-image">
-              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+              <Img fluid={data.portfolio.childImageSharp.fluid} alt="dining room"/>
             </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
-            <span className="small-title">Design // Website</span>
-            <h4>This is my third<br/>project</h4>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
+            <span className="small-title">Gatsby // React // GraphQL // GSAP // SCSS</span>
+            <h4>Crolla Creations</h4>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/crollacreations'>Code</a>
           </div>
         </div>  
       </section>
@@ -144,15 +164,15 @@ const PortfolioSection = () => {
         <div className="project project4">
           <div className="box">
             <div className="project-image">
-              <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
+              <Img fluid={data.kelvin.childImageSharp.fluid} alt="dining room"/>
             </div>
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
-            <span className="small-title">Design // Website</span>
-            <h4>This is my fourth project</h4>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Code</a>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
+            <span className="small-title">Gatsby // React // GraphQL // SCSS</span>
+            <h4>Cafe Website</h4>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/kelvin-pocket-cafe'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://kelvin-pocket.netlify.com/'>Live</a>
           </div>
         </div>  
       </section>
