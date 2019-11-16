@@ -26,7 +26,8 @@ article {
     }
     li {
       margin-left: 18px;
-      font-size: $m-size;
+      font-size: $ms-size;
+      padding: 5px 0;
     }
     blockquote {
       background-color: #fff;
@@ -40,8 +41,12 @@ article {
     font-size: $xl-size;
     padding: 40px 0 20px;
   }
+  h3 {
+    font-size: $ml-size;
+    padding: 40px 0 20px;
+  }
   ol {
-    list-style-type: lower-roman;
+    list-style-type: disc;
   }
   .date {
     color: $orange;
@@ -57,6 +62,7 @@ article {
       width: 100%;
   
       li {
+        padding: 0;
 
         .next {
           align-items: flex-end;

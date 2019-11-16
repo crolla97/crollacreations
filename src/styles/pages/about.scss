@@ -41,9 +41,10 @@
 
 .skills {
   display: flex;
+  flex-wrap: wrap;
 
   ul {
-    margin: 0 auto;    
+    width: 50%;
 
     span {
       font-size: $ms-size;
@@ -52,6 +53,12 @@
     li {
       font-size: $m-size;
       padding: 5px 0;
+    }
+  }
+  .other {
+    padding-top: 40px;
+    @media only screen and (min-width: 1024px) {
+      padding-top: 0;
     }
   }
 }
@@ -71,11 +78,11 @@
   }
 
   .orangeLine1 {
-    width: 33.33%;
+    width: 66.66%;
   }
   
   .orangeLine2 {
-    width: 66.66%;
+    width: 100%;
   }
 
   .orangeLine3 {
@@ -92,9 +99,13 @@
   }
 
   .skills {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: unset;
   
     ul {
-      margin: 0 0 0 2px; 
+      margin: 0 0 0 2px;
+      width: 33.33%;
   
       span {
         font-size: $ml-size;
@@ -104,14 +115,6 @@
         font-size: $ms-size;
         padding: 5px 0;
       }
-    }
-
-    .dev {
-      width: 33.33%;
-    }
-    
-    .design {
-      width: 33.33%;      
     }
   }
 }

@@ -35,7 +35,7 @@ const BlogPage = () => {
     <Layout>
       <SEO title="Blog" />
       <div className="blogContainer">
-        <h2>Blog</h2>
+        <h2>Posts</h2>
         <div className="tags"></div>
         <ul className="blog-list">
           {data.allMarkdownRemark.edges.map(edge => (

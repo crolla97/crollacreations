@@ -14,8 +14,10 @@ h1 {
 }
 
 body {
-  background: linear-gradient(90deg, #fff 1%, transparent 1%)-1px 0, #ececec;
-  background-size: 33.33% 1px;
+  // background: linear-gradient(90deg, #fff 1%, transparent 1%)-1px 0, #ececec;
+  // background-size: 33.33% 1px;
+  background-color: #f1f1f1;
+
 }
 
 html, body, div, span, applet, object, iframe,
@@ -381,7 +383,8 @@ textarea {
 
 @media only screen and (min-width: 1024px) {
   body {
-    background: linear-gradient(90deg, #fff 1%, transparent 1%) 0, #ececec;
-    background-size: 20% 1px;
+    // background: linear-gradient(90deg, #fff 1%, transparent 1%) 0, #ececec;
+    // background-size: 20% 1px;
+    background-color: #f1f1f1;
   }
 }

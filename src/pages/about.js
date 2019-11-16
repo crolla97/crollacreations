@@ -62,20 +62,26 @@ const AboutPage = (props) => {
         </div>
         <div className="orangeLine orangeLine2"></div>
         <div className="skills">
-          <ul className="dev">
-            <span>Development</span>          
+          <ul className="front">
+            <span>Front End</span>          
+            <li>CSS/SCSS</li>
             <li>Javascript</li>
             <li>React</li>
+            <li>Redux</li>
             <li>GatsbyJS</li>
-            <li>css/scss</li>
-            <li>GSAP - animations</li>
-            <li>GraphQL</li>
+            <li>GSAP (Greensock Animation)</li>
+          </ul>
+          <ul className="back">
+            <span>Back End</span>
             <li>Firebase</li>
             <li>Contentful</li>
+            <li>Node.js</li>
           </ul>
-          <ul className="design">
-            <span>Development</span>
-            <li>Wireframing</li>
+          <ul className="other">
+            <span>Other</span>
+            <li>Git / Github</li>
+            <li>GraphQL</li>
+            <li>SEO</li>
             <li>Adobe XD</li>
           </ul>
         </div>

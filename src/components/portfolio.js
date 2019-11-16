@@ -136,10 +136,10 @@ const PortfolioSection = () => {
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
-            <span className="small-title">React // Redux // Firebase // Materialize</span>
+            <span className="small-title">React // Redux // Firebase // Auth // Materialize</span>
             <h4>Budget App</h4>
             <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/react-budget-app'>Code</a>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='#'>Live</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://budget-app-bccb8.firebaseapp.com/'>Live</a>
           </div>
         </div>  
       </section>
