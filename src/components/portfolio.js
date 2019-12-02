@@ -11,7 +11,8 @@ import { useWindowSize } from '../hooks/useWindowDimensions'
 import '../styles/components/portfolio.scss'
 
 const PortfolioSection = () => {
-  const dimensions = useWindowSize()
+  const dimensions = useWindowSize();
+  console.log(dimensions);
   const data = useStaticQuery(graphql`
     query {
       massimo: file(relativePath: { eq: "images/massimo-dining&bar.jpg" }) {
@@ -21,7 +22,7 @@ const PortfolioSection = () => {
           }
         }
       },
-      kelvin: file(relativePath: { eq: "images/kelvin-outside.jpg" }) {
+      cafe: file(relativePath: { eq: "images/gatsby-starter-cafe.png" }) {
         childImageSharp {
           fluid(maxWidth: 1600) {
             ...GatsbyImageSharpFluid
@@ -61,12 +62,12 @@ const PortfolioSection = () => {
     const deskController = new ScrollMagic.Controller()
 
     if (dimensions.windowWidth < 1024) {
-      elements.classList.remove('grid-20');
+      // elements.classList.remove('grid-20');
       deskTL.kill()
       deskController.destroy(true)
       mobProject()
     } else if (dimensions.windowWidth >= 1024) {
-      elements.classList.add('grid-20');  
+      // elements.classList.add('grid-20');  
       mobTL.kill();
       mobController.destroy(true)
       deskProject()
@@ -75,7 +76,7 @@ const PortfolioSection = () => {
     function mobProject() {
       mobTL
       .delay(1)
-      .to(box, 1, {scale:'.8333', ease:Power4.easeOut})
+      .from(box, 1, {width: "100%", height: "100%", ease:Power4.easeOut})
       .from(projectInfo, 1, {autoAlpha:0, y:"50%", ease:Power4.easeOut}, "-=0.8")
       
       // ScrollMagic Scroll Scene
@@ -90,7 +91,7 @@ const PortfolioSection = () => {
     
     function deskProject() {
       deskTL
-      .to(box, 0.1, {opacity:1})
+      .from(box, 0.1, {opacity:0})
       .fromTo(picOverlay, 1.4, {skewX:30, scale:1.9}, {skewX:0, xPercent:100, transformOrigin: "0% 100%", ease: Power4.easeOut})
       .from(projectInfo, 0.6, {scaleY:0, transformOrigin: "bottom left"}, "-=1")
       .from(smallTitle, 0.3, {autoAlpha: 0, y:30, ease:Power4.easeOut}, "-=0.7")
@@ -111,7 +112,7 @@ const PortfolioSection = () => {
   return (
     <div>
       <section>
-        <div className="project project1">
+        <div className="project project1 grid-20">
           <div className="box">
             <div className="project-image">
               <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
@@ -119,16 +120,33 @@ const PortfolioSection = () => {
             <div className="box-overlay"></div>
           </div>
           <div className="project-info">
-            <span className="small-title">Gatsby // React // GraphQL // SCSS</span>
+            <span className="small-title">Gatsby // React // GraphQL // SCSS // Netlify Forms // LeafletJS</span>
             <h4>Massimo Restaurant</h4>
             <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/Massimo-Restaurant'>Code</a>
             <a rel="noopener noreferrer" target="blank" className="project-link" href='https://massimo.netlify.com/'>Live</a>
           </div>
         </div>  
       </section>
+
+      <section>
+        <div className="project project2 grid-20">
+          <div className="box">
+            <div className="project-image">
+              <Img fluid={data.cafe.childImageSharp.fluid} alt="dining room"/>
+            </div>
+            <div className="box-overlay"></div>
+          </div>
+          <div className="project-info">
+            <span className="small-title">Gatsby // React // GraphQL // SCSS // LeafletJS</span>
+            <h4>Gatsby Starter Cafe</h4>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/gatsby-starter-cafe'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://www.gatsbyjs.org/starters/crolla97/gatsby-starter-cafe/'>Live</a>
+          </div>
+        </div>  
+      </section>
       
       <section>
-        <div className="project project2">
+        <div className="project project3 grid-20">
           <div className="box">
             <div className="project-image">
               <Img fluid={data.budget.childImageSharp.fluid} alt="dining room"/>
@@ -145,7 +163,7 @@ const PortfolioSection = () => {
       </section>
 
       <section>
-        <div className="project project3">
+        <div className="project project4 grid-20">
           <div className="box">
             <div className="project-image">
               <Img fluid={data.portfolio.childImageSharp.fluid} alt="dining room"/>
@@ -160,22 +178,7 @@ const PortfolioSection = () => {
         </div>  
       </section>
 
-      <section>
-        <div className="project project4">
-          <div className="box">
-            <div className="project-image">
-              <Img fluid={data.kelvin.childImageSharp.fluid} alt="dining room"/>
-            </div>
-            <div className="box-overlay"></div>
-          </div>
-          <div className="project-info">
-            <span className="small-title">Gatsby // React // GraphQL // SCSS</span>
-            <h4>Cafe Website</h4>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/kelvin-pocket-cafe'>Code</a>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://kelvin-pocket.netlify.com/'>Live</a>
-          </div>
-        </div>  
-      </section>
+      
     </div>
   )
 }

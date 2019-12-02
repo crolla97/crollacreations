@@ -44,10 +44,6 @@ const AboutSect = () => {
               <span className="post-header">Featured Post</span>
               <Link to={`/blog/${data.markdownRemark.fields.slug}`} className="post">{data.markdownRemark.frontmatter.title}</Link>
             </div>
-            <div className="blog-posts">
-              <span className="post-header">Recent Post</span>
-              <Link to='/blog/learning-gatsby' className="post">Learning Gatsby</Link>
-            </div>
           </div>
         </section>
       </div>

@@ -22,6 +22,7 @@ query (
       title
       date(formatString: "DD MMMM, YYYY")
     }
+    timeToRead
     html
   }
 }
@@ -36,8 +37,9 @@ const Blog = (props) => {
         <article>
           <Link to="/blog">← Blog</Link>
           <SEO title={`${props.data.markdownRemark.frontmatter.title}`} />
-          <h2>{props.data.markdownRemark.frontmatter.title}</h2>
+          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
           <span className="date" >{props.data.markdownRemark.frontmatter.date}</span>
+          <span className="ttr">{props.data.markdownRemark.timeToRead} min read</span>
           <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></div>
           <div className="blog-links">
             <ul>

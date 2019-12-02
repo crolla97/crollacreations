@@ -45,8 +45,7 @@ const BlogPage = () => {
                 <div>
                   <span>{edge.node.frontmatter.date}</span>
                   <div className="split"></div>
-                  <span>{edge.node.timeToRead} min read</span>
-                  <div className="split"></div>                  
+                  <span>{edge.node.timeToRead} min read</span>                
                 </div>
               </Link>
             </li>
