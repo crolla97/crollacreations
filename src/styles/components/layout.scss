@@ -4,8 +4,7 @@ nav {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background: linear-gradient(90deg, #fff 1%, transparent 1%)-1px 0, $orange;
-  background-size: 33.33% 1px;
+  background-color: $orange;
   z-index: 250;
   transform: translateY(-110%);
   transition: 1s ease-out;
@@ -59,8 +58,7 @@ nav {
 
 @media only screen and (min-width: 1024px) {
   nav {
-    background: linear-gradient(90deg, #fff 1%, transparent 1%) 0, $orange;
-    background-size: 20% 1px;
+    background-color: $orange;
     transition: 0.7s ease-out;
 
     img:hover {
