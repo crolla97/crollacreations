@@ -12,7 +12,6 @@ import '../styles/components/portfolio.scss'
 
 const PortfolioSection = () => {
   const dimensions = useWindowSize();
-  console.log(dimensions);
   const data = useStaticQuery(graphql`
     query {
       massimo: file(relativePath: { eq: "images/massimo-dining&bar.jpg" }) {

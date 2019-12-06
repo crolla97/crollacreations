@@ -58,14 +58,15 @@ const AboutPage = (props) => {
         </div>
         <div className="orangeLine orangeLine1"></div>
         <div className="aboutText">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Hi! I am Cristiano Crolla, a frontend developer based in Edinburgh focused on building functional, performant websites. I am proudly self-taught and always learning new things.</p>
+          <p>I created this website and blog to catalog my learning process and show off my favourite projects. To view more of my work go to my <a href="https://github.com/crolla97">Github</a></p>
         </div>
         <div className="orangeLine orangeLine2"></div>
         <div className="skills">
           <ul className="front">
             <span>Front End</span>          
             <li>CSS/SCSS</li>
-            <li>Javascript</li>
+            <li>JavaScript</li>
             <li>React</li>
             <li>Redux</li>
             <li>GatsbyJS</li>
@@ -86,7 +87,7 @@ const AboutPage = (props) => {
           </ul>
         </div>
         <div className="orangeLine orangeLine3"></div>
-        <Img fluid={props.data.edinburgh.childImageSharp.fluid} alt="portrait"/>
+        <Img fluid={props.data.profile.childImageSharp.fluid} alt="portrait"/>
       </div>
     </Layout>
   )
@@ -94,7 +95,7 @@ const AboutPage = (props) => {
 
 export const pageQuery = graphql`
   query {
-    edinburgh: file(relativePath: { eq: "images/edinburgh.jpg" }) {
+    profile: file(relativePath: { eq: "images/profile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid

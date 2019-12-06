@@ -24,18 +24,21 @@
   color: #000;
 
   h3 {
-    font-size: $ms-size;
+    font-size: $l-size;
+
+    span {
+      padding-right: 10px;
+      color: $orange;
+      font-family: sans-serif;
+    }
   }
   div {
     display: flex;
     flex-direction: row;
-
-    span {
-      font-size: $sm-size;
-    }
-
+    padding-top: 15px;
+    font-size: $sm-size;
     .split {
-      border-right: 1px solid $orange;
+      border-right: 2px solid $orange;
       margin: 0 $xs-size;
     }
   }
@@ -57,12 +60,13 @@
     min-height: 85vh;
     padding: 100px 0 0 0;
 
-    h2 {
+    h3 {
       font-size: $xxl-size;
-      margin-bottom: $ml-size;
     }
-  }
-  .blog-list--item {
-    width: 50%;
+    .blogLink {
+      div {
+        font-size: $m-size;
+      }
+    }
   }
 }

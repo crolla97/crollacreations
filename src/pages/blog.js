@@ -18,7 +18,7 @@ const BlogPage = () => {
         node {
           frontmatter {
             title
-            date(formatString: "MMM DD")
+            date(formatString: "MMMM DD, YYYY")
             description
           }
           fields {
@@ -35,13 +35,11 @@ const BlogPage = () => {
     <Layout>
       <SEO title="Blog" />
       <div className="blogContainer">
-        <h2>Posts</h2>
-        <div className="tags"></div>
         <ul className="blog-list">
           {data.allMarkdownRemark.edges.map(edge => (
             <li key={edge.node.id} className="blog-list--item">
               <Link to={`/blog/${edge.node.fields.slug}`} className="blogLink">
-                <h3>{edge.node.frontmatter.title}</h3>
+                <h3><span>></span>{edge.node.frontmatter.title}</h3>
                 <div>
                   <span>{edge.node.frontmatter.date}</span>
                   <div className="split"></div>
