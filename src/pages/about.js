@@ -59,7 +59,7 @@ const AboutPage = (props) => {
         <div className="orangeLine orangeLine1"></div>
         <div className="aboutText">
           <p>Hi! I am Cristiano Crolla, a frontend developer based in Edinburgh focused on building functional, performant websites. I am proudly self-taught and always learning new things.</p>
-          <p>I created this website and blog to catalog my learning process and show off my favourite projects. To view more of my work go to my <a href="https://github.com/crolla97">Github</a></p>
+          <p>I created this website to catalogue my progress throughout learning and show off some of my favourite projects. To view more of my work head to my <a  rel="noopener noreferrer" href="https://github.com/crolla97">Github</a></p>
         </div>
         <div className="orangeLine orangeLine2"></div>
         <div className="skills">
