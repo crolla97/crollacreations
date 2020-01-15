@@ -41,6 +41,13 @@ const PortfolioSection = () => {
             ...GatsbyImageSharpFluid
           }
         }
+      },
+      pork: file(relativePath: { eq: "images/pork-dantes.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   `)
@@ -114,6 +121,23 @@ const PortfolioSection = () => {
         <div className="project project1 grid-20">
           <div className="box">
             <div className="project-image">
+              <Img fluid={data.pork.childImageSharp.fluid} alt="dining room"/>
+            </div>
+            <div className="box-overlay"></div>
+          </div>
+          <div className="project-info">
+            <span className="small-title">Gatsby // React // GraphQL // SCSS // Netlify</span>
+            <h4>Dantes Restaurant</h4>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/Dantes'>Code</a>
+            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://dantesrestaurant.netlify.com/'>Live</a>
+          </div>
+        </div>  
+      </section>
+
+      <section>
+        <div className="project project2 grid-20">
+          <div className="box">
+            <div className="project-image">
               <Img fluid={data.massimo.childImageSharp.fluid} alt="dining room"/>
             </div>
             <div className="box-overlay"></div>
@@ -128,7 +152,7 @@ const PortfolioSection = () => {
       </section>
 
       <section>
-        <div className="project project2 grid-20">
+        <div className="project project3 grid-20">
           <div className="box">
             <div className="project-image">
               <Img fluid={data.cafe.childImageSharp.fluid} alt="dining room"/>
@@ -145,7 +169,7 @@ const PortfolioSection = () => {
       </section>
       
       <section>
-        <div className="project project3 grid-20">
+        <div className="project project4 grid-20">
           <div className="box">
             <div className="project-image">
               <Img fluid={data.budget.childImageSharp.fluid} alt="dining room"/>
@@ -162,7 +186,7 @@ const PortfolioSection = () => {
       </section>
 
       <section>
-        <div className="project project4 grid-20">
+        <div className="project project5 grid-20">
           <div className="box">
             <div className="project-image">
               <Img fluid={data.portfolio.childImageSharp.fluid} alt="dining room"/>
