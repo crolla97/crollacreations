@@ -184,26 +184,27 @@ const PortfolioSection = () => {
           </div>
         </div>  
       </section>
-
-      <section>
-        <div className="project project5 grid-20">
-          <div className="box">
-            <div className="project-image">
-              <Img fluid={data.portfolio.childImageSharp.fluid} alt="dining room"/>
-            </div>
-            <div className="box-overlay"></div>
-          </div>
-          <div className="project-info">
-            <span className="small-title">Gatsby // React // GraphQL // GSAP // SCSS</span>
-            <h4>Crolla Creations</h4>
-            <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/crollacreations'>Code</a>
-          </div>
-        </div>  
-      </section>
-
       
     </div>
   )
 }
 
 export default PortfolioSection
+
+/*
+<section>
+  <div className="project project5 grid-20">
+    <div className="box">
+      <div className="project-image">
+        <Img fluid={data.portfolio.childImageSharp.fluid} alt="dining room"/>
+      </div>
+      <div className="box-overlay"></div>
+    </div>
+    <div className="project-info">
+      <span className="small-title">Gatsby // React // GraphQL // GSAP // SCSS</span>
+      <h4>Crolla Creations</h4>
+      <a rel="noopener noreferrer" target="blank" className="project-link" href='https://github.com/crolla97/crollacreations'>Code</a>
+    </div>
+  </div>  
+</section>
+*/
