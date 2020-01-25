@@ -49,9 +49,9 @@ const Header = () => {
         <Link to='/' className="logo">
           <span>CC</span>
         </Link>
-        <div disabled={disabled} className="menu" onClick={handleMenu}>
+        <button disabled={disabled} className="menu" onClick={handleMenu}>
           MENU
-        </div>
+        </button>
       </div>
       <Hamburger state={state}/>
     </header>
