@@ -21,7 +21,7 @@ header {
 
   
 }
-.hamburger-menu {
+.menu {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -33,6 +33,7 @@ header {
   width: 60px;
   z-index: 300;
   background: $orange;
+  color: #fff;
   cursor: pointer;
 }
 .logo {

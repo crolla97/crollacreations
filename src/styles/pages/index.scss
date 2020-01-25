@@ -86,6 +86,7 @@ h1 {
   position: relative;
   width: $ml-size;
   height: $ml-size;
+  visibility: hidden;
 
   a {
     margin-right: $ml-size;
@@ -93,7 +94,6 @@ h1 {
     .social-icon {
       width: $ml-size;
       height: $ml-size;
-      visibility: hidden;
     }
   }
 }

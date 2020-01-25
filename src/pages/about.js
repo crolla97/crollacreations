@@ -1,41 +1,27 @@
-import React, {useEffect} from "react"
+import React, { useRef, useEffect } from "react"
 
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import '../styles/pages/about.scss'
-import TimelineMax from 'TimelineMax';
-import { Power4 } from "gsap";
-import { useWindowSize } from '../hooks/useWindowDimensions'
+
+import { staggerAboutText, shrinkText } from '../components/Animations'
 
 const AboutPage = (props) => {
-  const dimensions = useWindowSize()
-
+  
+  // Create varibles of our dom nodes
+  let line1 = useRef(null);
+  let line2 = useRef(null);
+  let line3 = useRef(null);
+  let line4 = useRef(null);
+  let shrink = useRef(null);
+  
   useEffect(() => {
-    // New GSAP Timelines
-    const mobAnim = new TimelineMax();
-    const deskAnim = new TimelineMax();
-    
-    if (dimensions.windowWidth < 1024) {
-      mobileTL()
-    } else if (dimensions.windowWidth >= 1024) {
-      desktopTL()
-    }
 
-    function desktopTL() {
-      mobAnim.clear()
-      deskAnim
-      .staggerFrom('.hide-text', 1.5, {autoAlpha: 0, y:"100%", ease:Power4.easeOut}, 0.15)
-      .to('.shrink', 1, {fontSize: 30, ease:Power4.easeOut}, "=-1")
-    }
-    function mobileTL() {
-      deskAnim.clear()
-      mobAnim
-      .staggerFrom('.hide-text', 1.5, {autoAlpha: 0, y:"100%", ease:Power4.easeOut}, 0.15)
-      .to('.shrink', 1, {fontSize: 20, ease:Power4.ease}, "=-1")
+    // Animate introduction text
+    staggerAboutText(line1, line2, line3, line4);
+    shrinkText(shrink);
 
-    }
   }, [])
 
   return (
@@ -44,16 +30,16 @@ const AboutPage = (props) => {
       <div className="aboutContainer">
         <div className="aboutIntro">
           <h2>
-            <span className="hide-text">A <span className="shrink">little</span></span>
+            <span className="hide-text line1" ref={el => (line1 = el)}>A <span className="shrink" ref={el => (shrink = el)}>little</span></span>
           </h2>
           <h2>
-            <span className="hide-text">introduction</span>
+            <span className="hide-text line2" ref={el => (line2 = el)}>introduction</span>
           </h2>
           <h2>
-            <span className="hide-text">to who</span>
+            <span className="hide-text line3" ref={el => (line3 = el)}>to who</span>
           </h2>
           <h2>
-            <span className="hide-text">I am</span>
+            <span className="hide-text line4" ref={el => (line4 = el)}>I am</span>
           </h2>
         </div>
         <div className="orangeLine orangeLine1"></div>

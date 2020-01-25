@@ -2,9 +2,7 @@ const path  = require('path')
 
 exports.onCreateWebpackConfig = ({
   stage,
-  rules,
   loaders,
-  plugins,
   actions,
 }) => {
   actions.setWebpackConfig({
@@ -25,22 +23,6 @@ exports.onCreateWebpackConfig = ({
     },
     resolve: {
       alias: {
-        TweenLite: path.resolve(
-          'node_modules',
-          'gsap/src/uncompressed/TweenLite.js'
-        ),
-        TweenMax: path.resolve(
-          'node_modules',
-          'gsap/src/uncompressed/TweenMax.js'
-        ),
-        TimelineLite: path.resolve(
-          'node_modules',
-          'gsap/src/uncompressed/TimelineLite.js'
-        ),
-        TimelineMax: path.resolve(
-          'node_modules',
-          'gsap/src/uncompressed/TimelineMax.js'
-        ),
         ScrollMagic: path.resolve(
           'node_modules',
           'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'
