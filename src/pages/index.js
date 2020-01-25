@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react"
 
 import Layout from "../components/layout"
 import AboutSect from '../components/indexPage/aboutSect'
-import PortfolioSection from '../components/portfolio'
+import PortfolioSection from '../components/Portfolio'
 import SEO from "../components/seo"
 import { gsap } from 'gsap'
 

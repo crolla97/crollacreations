@@ -9,7 +9,7 @@ export const staggerHomeText = (node1, node2, node3, node4) => {
     y: "100%",
     ease: "power4.out",
     stagger: {
-      each: 0.25
+      each: 0.2
     }
   });
 };

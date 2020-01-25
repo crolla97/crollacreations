@@ -1,9 +1,14 @@
 @import '../base/settings.scss';
 
 header {
-  position: fixed;
-  width: 100%;
-  z-index: 300;
+  position: absolute;
+  height: 100vh;
+  
+  .header-container {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+  }
 
   .bar {
     position: relative;

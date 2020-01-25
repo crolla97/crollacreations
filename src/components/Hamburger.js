@@ -1,16 +1,27 @@
-import React, {useState} from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'gatsby'
 
+import { gsap } from 'gsap'
 
-const Menu = ({ show }) => {
-  let [openMenu, setMenu] = useState()
-  
-  removeItem = () => {
-    show()
-  }
+
+const Hamburger = ({ state }) => {
+  let menu = useRef(null);
+
+  useEffect(() => {
+    if (state.clicked === false) {
+      // Close menu
+    } else if (
+      state.clicked === true ||
+      (state.clicked === true && state.initial === null)
+    ) {
+      // Open menu
+      
+    }
+    
+  }, [state])
 
   return (
-    <div className="hamburger-menu">
+    <div ref={el => (menu = el)} className="hamburger-menu">
       <div className="menu-secondary-background-colour"></div>
       <div className="menu-layer">
         <div className="container">
@@ -25,6 +36,9 @@ const Menu = ({ show }) => {
                     <Link to="/projects">Projects</Link>
                   </li>
                   <li>
+                    <Link to="/blog">Blog</Link>
+                  </li>
+                  <li>
                     <Link to="/about">About</Link>
                   </li>
                   <li>
@@ -33,7 +47,7 @@ const Menu = ({ show }) => {
                 </ul>
               </nav>
               <div className="info">
-              
+
               </div>
             </div>
           </div>
@@ -43,4 +57,4 @@ const Menu = ({ show }) => {
   )
 }
 
-export default Menu
+export default Hamburger
