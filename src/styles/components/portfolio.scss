@@ -67,6 +67,16 @@ h4 {
   display: none;
 }
 
+.hide-portfolio-text {
+  position: absolute;
+  z-index: 10;
+  visibility: hidden;
+}
+
+.arrow-container {
+  height: 65px;
+}
+
 /****************
 * MEDIA QUERIES *
 ****************/

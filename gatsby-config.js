@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: `https://www.crollacreations.com`,
   },
   plugins: [
-    `gatsby-plugin-transition-link`
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {

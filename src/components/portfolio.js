@@ -1,9 +1,15 @@
 import React, {useEffect} from "react"
-
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import {gsap} from 'gsap'
+import { ScrollScene } from 'scrollscene';
+import { useWindowSize } from 'react-use'
+
 
 const PortfolioSection = () => {
+  const size = useWindowSize();
+  console.log(size);
+
   const data = useStaticQuery(graphql`
     query {
       massimo: file(relativePath: { eq: "images/massimo-dining&bar.jpg" }) {
@@ -42,9 +48,79 @@ const PortfolioSection = () => {
         }
       }
     }
-  `)
+  `) 
   
   
+  useEffect(() => {
+    let projects = document.querySelectorAll('.project');
+    projects.forEach((elements) => {
+      let picOverlay = elements.querySelectorAll('.box-overlay');
+      let projectInfo = elements.querySelectorAll('.project-info');
+      let smallTitle = elements.querySelectorAll('.small-title');
+      let projectLink = elements.querySelectorAll('.project-link');
+      let title = elements.querySelectorAll('h4');
+      let box = elements.querySelectorAll('.box');
+
+      if (size.width < 1024) {
+        mobileController()
+      } else if (size.width >= 1024) {
+        desktopController()
+      }
+      
+      function desktopController() {
+
+        const desktopTL = gsap.timeline({ paused: true })
+
+        desktopTL.from(box, {opacity:0, duration: 0.1})
+        desktopTL.fromTo(picOverlay, 1.4, {skewX:30, scale:1.9}, {skewX:0, xPercent:100, transformOrigin: "0% 100%", ease:"power3.out"})
+        desktopTL.from(projectInfo, 0.6, {scaleY:0, transformOrigin: "bottom left"}, "-=1")
+        desktopTL.from(smallTitle, 0.3, {autoAlpha: 0, y:30, ease:"power3.out"}, "-=0.7")
+        desktopTL.from(projectLink, 0.3, {autoAlpha: 0, y:30, ease:"power3.out"}, "-=0.7")
+        desktopTL.from(title, 0.3, {autoAlpha: 0, y:30, ease:"power3.out"}, "-=0.7")
+
+        const desktopScrollScene = new ScrollScene({
+          triggerElement: elements,
+          triggerHook: 0.5,
+          gsap: {
+            timeline: desktopTL,
+          },
+          scene: {
+            reverse: false,
+          }
+        })
+
+        // destroy on unmount
+        return () => {
+          desktopScrollScene.destroy()
+        }
+      }
+
+      function mobileController() {
+        const mobileTL = gsap.timeline({ paused: true })
+  
+        mobileTL.from(box, 1, {width: "100%", ease:"power3.out"})
+        mobileTL.from(projectInfo, 1, {autoAlpha:0, y:"50%", ease:"power3.out"}, "-=0.8")
+  
+        const mobileScrollScene = new ScrollScene({
+          triggerElement: elements,
+          triggerHook: 0.5,
+          gsap: {
+            timeline: mobileTL,
+          },
+          scene: {
+            reverse: false,
+          }
+        })
+
+        // destroy on unmount
+        return () => {
+          mobileScrollScene.destroy()
+        }
+      }
+    
+    })
+    
+  }, [size])
 
   return (
     <div>

@@ -31,7 +31,9 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
-    "scrollmagic": "^2.0.7"
+    "react-use": "^13.22.0",
+    "scrollmagic": "^2.0.7",
+    "scrollscene": "^0.0.10"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

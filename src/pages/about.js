@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { staggerAboutText, shrinkText } from '../components/Animations'
+import { staggerAboutText, shrinkText } from '../components/animations'
 
 const AboutPage = (props) => {
   

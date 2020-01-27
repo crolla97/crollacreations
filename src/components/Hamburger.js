@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react'
-import { Link } from 'gatsby'
-import { gsap } from 'gsap'
-import TransitionLink from "gatsby-plugin-transition-link"
+import gsap from 'gsap'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import {
   staggerReveal,
   staggerRevealClose,
   staggerHamburgerText
-} from './Animations'
+} from './animations'
 
 
 const Hamburger = ({ state }) => {
@@ -60,21 +59,29 @@ const Hamburger = ({ state }) => {
               <nav>
                 <ul>
                   <li ref={el => (line1 = el)} >
-                    <Link to="/">Home</Link>
+                    <AniLink cover to="/" bg="#000000" direction="top" duration={0.8}>
+                      Home
+                    </AniLink> 
                   </li>
                   <li ref={el => (line2 = el)}>
-                    <Link to="/portfolio">Portfolio</Link>
+                    <AniLink cover to="/portfolio" bg="#000000" direction="top" duration={0.8}>
+                      Portfolio
+                    </AniLink> 
                   </li>
                   <li ref={el => (line3 = el)}>
-                    <Link to="/blog">Blog</Link>
+                    <AniLink cover to="/blog" bg="#000000" direction="top" duration={0.8}>
+                      Blog
+                    </AniLink> 
                   </li>
                   <li ref={el => (line4 = el)}>
-                    <TransitionLink to="/about" exit={{
-                      
-                    }}>About</TransitionLink>
+                    <AniLink cover to="/about" bg="#000000" direction="top" duration={0.8}>
+                      About
+                    </AniLink>                
                   </li>
                   <li ref={el => (line5 = el)}>
-                    <Link to="/contact">Contact</Link>
+                    <AniLink cover to="/contact" bg="#000000" direction="top" duration={0.8}>
+                      Contact
+                    </AniLink> 
                   </li>
                 </ul>
               </nav>

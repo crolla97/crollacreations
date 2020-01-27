@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from "react"
 
 import Layout from "../components/layout"
 import AboutSect from '../components/indexPage/aboutSect'
-import PortfolioSection from '../components/Portfolio'
+import PortfolioSection from '../components/portfolio'
+import PortfolioIntro from '../components/portfolioIntro'
 import SEO from "../components/seo"
 import { gsap } from 'gsap'
-
-import { staggerHomeText } from '../components/Animations'
+import { staggerHomeText } from '../components/animations'
 
 const IndexPage = () => {
 
@@ -46,11 +46,6 @@ const IndexPage = () => {
       autoAlpha: 0,
       y: "100%"
     })
-
-
-    // .from('.social-icon', 0.3, {autoAlpha:0, y:"100%"}, "-=0.3")
-    // .to('.side-links', 0.8, {x: 0, ease:Power4.easeOut});
-    
   }, [])
 
 
@@ -90,12 +85,8 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <div className="project-intro">
-        <h2>Here's</h2>
-        <h2>Some</h2>
-        <h2>Recent</h2>
-        <h2>Work</h2>
-        <img className="arrow-down" src={require('../images/right-chevron.png')} alt="down arrow"/>
+      <div className="home-container">
+        <PortfolioIntro />
       </div>
       <PortfolioSection />
       <AboutSect/>

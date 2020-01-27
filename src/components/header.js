@@ -1,8 +1,7 @@
 import PropTypes from "prop-types"
-import React, { useState, useEffect} from "react"
-import { Link } from "gatsby";
-
-import Hamburger from './Hamburger'
+import React, { useState } from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Hamburger from './hamburger'
 
 const Header = () => {
 
@@ -46,11 +45,11 @@ const Header = () => {
   return (
     <header>
       <div className="header-container">
-        <Link to='/' className="logo">
+        <AniLink to='/' cover direction="top" className="logo" bg="#EE9700">
           <span>CC</span>
-        </Link>
+        </AniLink>
         <button disabled={disabled} className="menu" onClick={handleMenu}>
-          MENU
+          {state.menuName}
         </button>
       </div>
       <Hamburger state={state}/>
