@@ -5,7 +5,7 @@ import {
   staggerReveal,
   staggerRevealClose,
   staggerHamburgerText
-} from './animations'
+} from './Animations'
 
 
 const Hamburger = ({ state }) => {

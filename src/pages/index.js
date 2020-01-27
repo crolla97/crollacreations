@@ -6,7 +6,7 @@ import PortfolioSection from '../components/portfolio'
 import PortfolioIntro from '../components/portfolioIntro'
 import SEO from "../components/seo"
 import { gsap } from 'gsap'
-import { staggerHomeText } from '../components/animations'
+import { staggerHomeText } from '../components/Animations'
 
 const IndexPage = () => {
 

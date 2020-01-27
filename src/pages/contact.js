@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { staggerContactText } from '../components/animations'
+import { staggerContactText } from '../components/Animations'
 
 const ContactPage = () => {
   // Create variales for dom nodes

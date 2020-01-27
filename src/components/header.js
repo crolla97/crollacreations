@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Hamburger from './hamburger'
+import Hamburger from './Hamburger'
 
 const Header = () => {
 
