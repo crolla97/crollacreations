@@ -3,7 +3,6 @@ import React from "react"
 import {useStaticQuery, graphql, Link} from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import '../styles/pages/blog.scss'
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`

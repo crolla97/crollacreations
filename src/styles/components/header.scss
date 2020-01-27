@@ -1,9 +1,14 @@
 @import '../base/settings.scss';
 
 header {
-  position: fixed;
-  width: 100%;
-  z-index: 300;
+  position: absolute;
+  height: 100vh;
+  
+  .header-container {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+  }
 
   .bar {
     position: relative;
@@ -21,7 +26,7 @@ header {
 
   
 }
-.hamburger-menu {
+.menu {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -33,7 +38,9 @@ header {
   width: 60px;
   z-index: 300;
   background: $orange;
+  color: #fff;
   cursor: pointer;
+  border: none;  
 }
 .logo {
   position: absolute;

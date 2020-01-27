@@ -34,7 +34,7 @@ h1 {
 
 .hide-text {
   position: absolute;
-  z-index: 200;
+  z-index: 10;
   visibility: hidden;
 }
 
@@ -86,6 +86,7 @@ h1 {
   position: relative;
   width: $ml-size;
   height: $ml-size;
+  visibility: hidden;
 
   a {
     margin-right: $ml-size;
@@ -93,7 +94,6 @@ h1 {
     .social-icon {
       width: $ml-size;
       height: $ml-size;
-      visibility: hidden;
     }
   }
 }
@@ -176,6 +176,13 @@ h1 {
     font-size: 65px;
     height: 65px;
     margin: 0;
+  }
+}
+
+.home-container {
+
+  .project-page-intro {
+    height: unset;
   }
 }
 

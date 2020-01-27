@@ -1,2 +1,18 @@
 @import './base/base.scss';
 @import './base/settings.scss';
+
+@import './components/footer.scss';
+@import './components/header.scss';
+@import './components/layout.scss';
+@import './components/menu.scss';
+@import './components/portfolio.scss';
+@import './components/Hamburger.scss';
+
+@import './pages/about.scss';
+@import './pages/blog.scss';
+@import './pages/contact.scss';
+@import './pages/index.scss';
+@import './pages/portfolio.scss';
+
+@import './templates/post.scss';
+@import './templates/prism.scss';

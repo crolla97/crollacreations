@@ -12,6 +12,7 @@ module.exports = {
     siteUrl: `https://www.crollacreations.com`,
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
@@ -56,6 +57,7 @@ module.exports = {
         fonts: [
           `Nunito`,
           `Playfair Display\:400,400italic,700,700italic,900`,
+          `Poppins\:400, 700`
         ]
       }
     },

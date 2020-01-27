@@ -1,29 +1,58 @@
 import PropTypes from "prop-types"
-import React, {useState} from "react"
+import React, { useState } from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Hamburger from './Hamburger'
 
-import '../styles/components/header.scss'
-import { Link } from "gatsby";
+const Header = () => {
 
-const Header = ({ siteTitle, parentCallback }) => {
-  let [open, setOpen] = useState(false);
-  const topBar = open ? 'bar bar-top bar-top-anim' : 'bar bar-top';
-  const midBar = open ? 'bar bar-mid bar-mid-anim' : 'bar bar-mid';
-  const botBar = open ? 'bar bar-bot bar-bot-anim' : 'bar bar-bot';
+  const [state, setState] = useState({
+    initial: false,
+    clicked: null,
+    menuName: "MENU"
+  });
+
+  const [disabled, setDisabled] = useState(false);
+
+  const handleMenu = () => {
+    disableMenu();
+    if (state.initial === false) {
+      setState({
+        initial: null,
+        clicked: true,
+        menuName: 'CLOSE'
+      });
+    } else if (state.clicked === true) {
+      setState({
+        clicked: !state.clicked,
+        menuName: 'MENU'
+      });
+    } else if (state.clicked === false) {
+      setState({
+        clicked: !state.clicked,
+        menuName: 'CLOSE'
+      });
+    }
+  }
+
+  // Determine if button should be disabled
+  const disableMenu = () => {
+    setDisabled(!disabled);
+    setTimeout(() => {
+      setDisabled(false)
+    }, 1200);
+  }
 
   return (
     <header>
-      <Link to='/' className="logo">
-        <span>CC</span>
-      </Link>
-      <div className="hamburger-menu" onClick={() => {
-        let newValue = !open
-        setOpen(!open);
-        parentCallback(newValue);
-      }}>
-        <div className={topBar}></div>
-        <div className={midBar}></div>
-        <div className={botBar}></div>
+      <div className="header-container">
+        <AniLink to='/' cover direction="top" className="logo" bg="#EE9700">
+          <span>CC</span>
+        </AniLink>
+        <button disabled={disabled} className="menu" onClick={handleMenu}>
+          {state.menuName}
+        </button>
       </div>
+      <Hamburger state={state}/>
     </header>
   )
 }

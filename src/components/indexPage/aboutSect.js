@@ -1,10 +1,5 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-
-import TimelineMax from 'TimelineMax';
-import ScrollMagic from 'ScrollMagic';
-import 'animation.gsap';
-import 'debug.addIndicators';
 
 
 const AboutSect = () => {
@@ -21,20 +16,6 @@ const AboutSect = () => {
   }
   `)
   
-  useEffect(() => {
-    const introBlogMobile = new TimelineMax()
-    const controller = new ScrollMagic.Controller()  
-    introBlogMobile
-    .staggerFrom('.blog-posts', 0.8, {opacity:0, y:"100%"}, 0.2)
-    .from('h3', 0.8, {opacity:0}, '-=1.2')
-    new ScrollMagic.Scene({
-      triggerElement: '.blog-intro',
-    })
-    .setTween(introBlogMobile)
-    .reverse(false)
-    .addTo(controller)
-      
-    })
   return (
     <div className="grid-12 intro-trigger">
         <section className="intro-section">
