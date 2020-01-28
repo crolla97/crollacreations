@@ -81,7 +81,7 @@ const IndexPage = () => {
           <div className="social-links"  ref={el => (socialIcons = el)}>
             <a href="https://github.com/crolla97" rel="noopener noreferrer" target="blank"><img src={require('../images/github-black.png')} alt="github logo" className="social-icon"/></a>
             <a href="https://www.instagram.com/crollacreations" rel="noopener noreferrer" target="blank"><img src={require('../images/instagram-black.png')} alt="instagram logo" className="social-icon"/></a>
-            <a href='https://twitter.com/crollacreations' rel="noopener noreferrer" target="blank"><img src={require('../images/twitter-black.png')} alt="twitter logo" className="social-icon"/></a>
+            <a href='https://www.linkedin.com/in/cristiano-crolla-4b30a0159/' rel="noopener noreferrer" target="blank"><img src={require('../images/linked-black.png')} alt="linkedin logo" className="social-icon"/></a>
           </div>
         </div>
       </div>

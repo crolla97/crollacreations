@@ -59,27 +59,63 @@ const Hamburger = ({ state }) => {
               <nav>
                 <ul>
                   <li ref={el => (line1 = el)} >
-                    <AniLink cover to="/" bg="#000000" direction="top" duration={0.8}>
+                    <AniLink 
+                      cover 
+                      to="/" 
+                      activeStyle={{ color: "black" }}
+                      bg="#000000" 
+                      direction="top" 
+                      duration={0.8}
+                    >
                       Home
                     </AniLink> 
                   </li>
                   <li ref={el => (line2 = el)}>
-                    <AniLink cover to="/portfolio" bg="#000000" direction="top" duration={0.8}>
+                    <AniLink 
+                      cover 
+                      to="/portfolio" 
+                      bg="#000000" 
+                      direction="top" 
+                      duration={0.8}
+                      activeStyle={{ color: "black" }}
+                    >
                       Portfolio
                     </AniLink> 
                   </li>
                   <li ref={el => (line3 = el)}>
-                    <AniLink cover to="/blog" bg="#000000" direction="top" duration={0.8}>
+                    <AniLink 
+                      cover 
+                      to="/blog" 
+                      bg="#000000" 
+                      direction="top" 
+                      duration={0.8}
+                      activeStyle={{ color: "black" }}
+                      partiallyActive={true}
+                    >
                       Blog
                     </AniLink> 
                   </li>
                   <li ref={el => (line4 = el)}>
-                    <AniLink cover to="/about" bg="#000000" direction="top" duration={0.8}>
+                    <AniLink 
+                      cover 
+                      to="/about" 
+                      bg="#000000" 
+                      direction="top" 
+                      duration={0.8}
+                      activeStyle={{ color: "black" }}
+                    >
                       About
                     </AniLink>                
                   </li>
                   <li ref={el => (line5 = el)}>
-                    <AniLink cover to="/contact" bg="#000000" direction="top" duration={0.8}>
+                    <AniLink 
+                      cover 
+                      to="/contact" 
+                      bg="#000000" 
+                      direction="top" 
+                      duration={0.8}
+                      activeStyle={{ color: "black" }}
+                    >
                       Contact
                     </AniLink> 
                   </li>
