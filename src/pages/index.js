@@ -66,15 +66,15 @@ const IndexPage = () => {
           </h1>
           <div className="role-headers">
             <span className="role">
-              <span className="role-text" ref={el => (roleText1 = el)}>Front-end developer</span>
+              <span className="role-text" ref={el => (roleText1 = el)}>Full-stack developer</span>
               <span className="role-bg" ref={el => (roleBackground1 = el)}></span>
             </span>
             <span className="role">
-              <span className="role-text" ref={el => (roleText2 = el)}>UI designer</span>
+              <span className="role-text" ref={el => (roleText2 = el)}>Ruby on Rails</span>
               <span className="role-bg" ref={el => (roleBackground2 = el)}></span>
             </span>
             <span className="role">
-              <span className="role-text" ref={el => (roleText3 = el)}>Full-time learner</span>
+              <span className="role-text" ref={el => (roleText3 = el)}>Javascript</span>
               <span className="role-bg" ref={el => (roleBackground3 = el)}></span>
             </span>
           </div>
